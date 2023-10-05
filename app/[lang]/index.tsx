@@ -22,10 +22,10 @@ export default function Home({ dictionary }: {
 
   useEffect(() => {
     if (!socket) {
-      const socketIns = io({
+      const socketIns = io('https://ganfan-flame.vercel.app', {
         path: '/api/socket/io',
         addTrailingSlash: false,
-        transports: ['websocket'],
+        withCredentials: true,
       })
 
       socketIns.on('connect', () => {

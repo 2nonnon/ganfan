@@ -15,6 +15,11 @@ const ioHandler = (req: NextApiRequest, res: NextApiResponseWithSocket) => {
       {
         path: '/api/socket/io',
         addTrailingSlash: false,
+        cors: {
+          origin: 'https://ganfan-flame.vercel.app',
+          methods: ['GET', 'POST'],
+          credentials: true,
+        },
       },
     )
 
