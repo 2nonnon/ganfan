@@ -25,6 +25,7 @@ export default function Home({ dictionary }: {
       const socketIns = io({
         path: '/api/socket/io',
         addTrailingSlash: false,
+        transports: ['websocket'],
       })
 
       socketIns.on('connect', () => {
